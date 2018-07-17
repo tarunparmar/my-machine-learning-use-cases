@@ -1,0 +1,60 @@
+## These instructions are helpful for running R engine in Jupyter notebook
+
+
+# Install R and RStudio on Ubuntu 16.04
+sudo apt-key adv -–keyserver keyserver.ubuntu.com -–recv-keys E084DAB9
+
+# Ubuntu 12.04: precise
+# Ubuntu 14.04: trusty
+# Ubuntu 16.04: xenial
+# Basic format of next line deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu <enter your ubuntu version>/
+sudo add-apt-repository 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu xenial/'
+sudo apt-get update
+sudo apt-get install r-base
+sudo apt-get install r-base-dev
+
+# Download and Install RStudio
+sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo gdebi rstudio-1.0.44-amd64.deb
+rm rstudio-1.0.44-amd64.deb
+
+
+# After R is installed, start R in bash shell
+$ R
+
+> install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+
+
+# Above command will prompt you to type in a number to select a CRAN mirror to install the necessary packages. Enter a number and the installation will continue.
+
+> devtools::install_github('IRkernel/IRkernel')
+
+
+Then, you still need to make the R kernel visible for Jupyter:
+
+# Install IRKernel for the current user
+
+> IRkernel::installspec()
+
+# Or install IRKernel system-wide
+
+> IRkernel::installspec(user = FALSE)
+
+Now open up the notebook application with jupyter notebook. You'll see R appearing in the list of kernels when you create a new notebook. 
+
+
+
+
+# Using An R Essentials Environment In Jupyter
+
+The second option to quickly work with R is to install the R essentials in your current environment:
+
+
+conda install -c r r-essentials
+
+
+These "essentials" include the packages dplyr, shiny, ggplot2, tidyr, caret, and nnet. If you don't want to install the essentials in your current environment, you can use the following command to create a new environment just for the R essentials:
+
+conda create -n my-r-env -c r r-essentials
+ 
