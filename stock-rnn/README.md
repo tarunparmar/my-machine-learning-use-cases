@@ -28,7 +28,7 @@ python3 main.py --stock_count=100 --train --input_size=1 --lstm_size=128 --max_e
 ```bash
 cd stock-rnn
 mkdir logs
-tensorboard --logdir ./logs --port 1234 --debug
+tensorboard --logdir ./logs
 ```
 
 My python environment: 
