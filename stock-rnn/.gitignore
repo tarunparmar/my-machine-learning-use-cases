@@ -1,0 +1,15 @@
+*.*~
+*.pyc
+*.ipynb
+.DS_Store
+data/*.tsv
+data/*.csv
+logs/*
+models/*
+checkpoints/*
+images/*
+.idea/
+.ipynb_checkpoints/
+tmp_data/
+__pycache__
+stock-data-lilianweng.tar.gz
